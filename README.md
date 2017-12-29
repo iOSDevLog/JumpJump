@@ -1,3 +1,4 @@
+
 # JumpJump
 ---
 
@@ -19,9 +20,11 @@
 
 用usb调试安卓手机，用adb截图并用鼠标测量距离，然后计算按压时间后模拟按压。
 
+```bash
 adb shell input swipe <x1> <y1> <x2> <y2> [duration(ms)] (Default: touchscreen) # 模拟长按
 adb shell screencap <filename> # 保存截屏到手机
 adb pull /sdcard/screen.png # 下载截屏文件到本地
+```
 
 1. 得到手指按的时间 t
 1. 时间 = 距离 / 速度(常量) t = L / k
