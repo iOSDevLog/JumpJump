@@ -6,7 +6,7 @@
 # 成果
 ---
 
-![1077](https://raw.githubusercontent.com/iOSDevLog/JumpJump/master/screenshot.jpg)
+![1077](https://github.com/iOSDevLog/JumpJump/raw/master/screenshot.jpg)
 
 
 # 跳一跳
