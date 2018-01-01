@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_jj" default="compile.module.jj">
+  <dirname property="module.jj.basedir" file="${ant.file.module_jj}"/>
+  
+  <property name="module.jdk.home.jj" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.jj" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.jj" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.jj" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="jj.output.dir" value="${module.jj.basedir}/out/production/JJ"/>
+  <property name="jj.testoutput.dir" value="${module.jj.basedir}/out/test/JJ"/>
+  
+  <path id="jj.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="jj.module.production.classpath">
+    <path refid="${module.jdk.classpath.jj}"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+  </path>
+  
+  <path id="jj.runtime.production.module.classpath">
+    <pathelement location="${jj.output.dir}"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+  </path>
+  
+  <path id="jj.module.classpath">
+    <path refid="${module.jdk.classpath.jj}"/>
+    <pathelement location="${jj.output.dir}"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+  </path>
+  
+  <path id="jj.runtime.module.classpath">
+    <pathelement location="${jj.testoutput.dir}"/>
+    <pathelement location="${jj.output.dir}"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.jj">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.jj">
+    <patternset refid="excluded.from.module.jj"/>
+  </patternset>
+  
+  <path id="jj.module.sourcepath">
+    <dirset dir="${module.jj.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.jj" depends="compile.module.jj.production,compile.module.jj.tests" description="Compile module JJ"/>
+  
+  <target name="compile.module.jj.production" depends="register.custom.compilers" description="Compile module JJ; production classes">
+    <mkdir dir="${jj.output.dir}"/>
+    <javac2 destdir="${jj.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.jj}/javac">
+      <compilerarg line="${compiler.args.jj}"/>
+      <bootclasspath refid="jj.module.bootclasspath"/>
+      <classpath refid="jj.module.production.classpath"/>
+      <src refid="jj.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.jj"/>
+    </javac2>
+    
+    <copy todir="${jj.output.dir}">
+      <fileset dir="${module.jj.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.jj.tests" depends="register.custom.compilers,compile.module.jj.production" description="compile module JJ; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.jj" description="cleanup module">
+    <delete dir="${jj.output.dir}"/>
+    <delete dir="${jj.testoutput.dir}"/>
+  </target>
+</project>
