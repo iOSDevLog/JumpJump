@@ -65,7 +65,7 @@ Build -> Build Artifacts -> JJ:jar -> Build
 
 1. 在电脑上下载好adb
 1. 打开安卓手机的usb调试模式并授权连接的电脑
-1. 直接运行 `JJ.jar``,选择 adb 路径
+1. 直接运行 `JJ.jar`,选择 adb 路径
 1. 打开微信跳一跳，并点击开始
 1. 选择运行模式
 
