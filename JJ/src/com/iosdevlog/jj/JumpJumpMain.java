@@ -71,6 +71,7 @@ class JumpJumpMain {
                     String fileName = file.getName();
                     if (fileName.contains("adb")) {
                         adbTextField.setText(file.getAbsolutePath());
+                        AdbCaller.INSTANCE.setAdbPath(file.getAbsolutePath());
                     } else {
                         JOptionPane.showMessageDialog( null,"Please input adb path!");
                     }

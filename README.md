@@ -9,6 +9,9 @@
 
 ![1077](https://github.com/iOSDevLog/JumpJump/raw/master/screenshot.jpg)
 
+![10010](https://github.com/iOSDevLog/JumpJump/raw/master/10010.jpg)
+
+![mac](https://github.com/iOSDevLog/JumpJump/raw/master/mac.jpg)
 
 # 跳一跳
 ---
@@ -34,9 +37,13 @@ $ adb pull /sdcard/screen.png # 下载截屏文件到本地
 # 源码
 ---
 
-开发环境： Kotlin, IetelliJ IDEA
+开发环境： Kotlin, IntelliJ IDEA
 
 <https://github.com/iOSDevLog/JumpJump>
+
+用 IntelliJ IDEA *Open* JJ 目录
+
+可能要配置 JDK。运行
 
 
 # 使用方法
@@ -44,9 +51,13 @@ $ adb pull /sdcard/screen.png # 下载截屏文件到本地
 
 1. 在电脑上下载好adb
 1. 打开安卓手机的usb调试模式并授权连接的电脑
+1. 直接运行 `JJ.jar``,选择 adb 路径
 1. 打开微信跳一跳，并点击开始
-1. 在`Constans.kt`中配置好adb路径与截图路径，运行
-1. 在弹出的窗口中先点击小人底部适当位置，然后再点想要跳的箱子的位置即可完成
+1. 选择运行模式
+
+运行中可调节 `Ratio`。
+
+切换模式最好重新打开应用。
 
 # 参考
 ---
