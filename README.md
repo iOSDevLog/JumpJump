@@ -54,6 +54,15 @@ Build -> Build Artifacts -> JJ:jar -> Build
 # 使用方法
 ---
 
+## 可以用打包好的。
+
+<https://github.com/iOSDevLog/JumpJump/releases>
+
+或者百度网盘: <https://pan.baidu.com/s/1mhFMVrE>
+
+
+链接: https://pan.baidu.com/s/1i4Pw7hb 密码: ajjt
+
 1. 在电脑上下载好adb
 1. 打开安卓手机的usb调试模式并授权连接的电脑
 1. 直接运行 `JJ.jar``,选择 adb 路径
