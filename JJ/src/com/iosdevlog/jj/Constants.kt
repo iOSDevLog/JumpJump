@@ -3,7 +3,7 @@ package com.iosdevlog.jj
 /**
  * adb所在位置
  */
-val ADB_PATH = "D:\\Android\\sdk\\platform-tools\\adb.exe"
+val ADB_PATH = "/Users/ios/Library/Android/sdk/platform-tools/adb"
 /**
  * 截屏文件所在位置
  */

@@ -47,6 +47,9 @@ $ adb pull /sdcard/screen.png # 下载截屏文件到本地
 
 可能要配置 Project Structure -> JDK, Edit Configurations -> Kotlin -> Configuration -> JRE 重新选择JRE 运行
 
+## 生成 jar
+
+Build -> Build Artifacts -> JJ:jar -> Build
 
 # 使用方法
 ---
