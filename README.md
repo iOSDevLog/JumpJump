@@ -11,7 +11,7 @@
 
 ![10010](https://github.com/iOSDevLog/JumpJump/raw/master/10010.jpg)
 
-![mac](https://github.com/iOSDevLog/JumpJump/raw/master/mac.jpg)
+![mac](https://github.com/iOSDevLog/JumpJump/raw/master/mac.png)
 
 # 跳一跳
 ---
@@ -43,7 +43,9 @@ $ adb pull /sdcard/screen.png # 下载截屏文件到本地
 
 用 IntelliJ IDEA *Open* JJ 目录
 
-可能要配置 JDK。运行
+我 MacOS 上面是 Java 9, Windows 10上是 Java 8.
+
+可能要配置 Project Structure -> JDK, Edit Configurations -> Kotlin -> Configuration -> JRE 重新选择JRE 运行
 
 
 # 使用方法
